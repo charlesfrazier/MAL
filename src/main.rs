@@ -19,9 +19,7 @@ fn main() {
             scores.sort_by(|a, b| b.0.cmp(&a.0));
             while scores.len() >= 4 {
                 let highest_score = scores.remove(0);
-                let room: Vec<i32> = vec![highest_score.1].into_iter()
-                    .chain(scores.iter().take(3).map(|&x| x.1))
-                    .collect();
+                let room: Vec<i32> = vec![highest_score.1].into_iter().chain(scores.iter().take(3).map(|&x| x.1)).collect();
                 final_allocation.push((highest_score.0, room));
                 scores = scores.split_off(3);
             }
@@ -61,9 +59,7 @@ fn main() {
                 scores.sort_by(|a, b| b.0.cmp(&a.0));
                 while scores.len() >= 4 {
                     let highest_score = scores.remove(0);
-                    let room: Vec<i32> = vec![highest_score.1].into_iter()
-                        .chain(scores.iter().take(3).map(|&x| x.1))
-                        .collect();
+                    let room: Vec<i32> = vec![highest_score.1].into_iter().chain(scores.iter().take(3).map(|&x| x.1)).collect();
                     final_allocation.push((highest_score.0, room));
                     scores = scores.split_off(3);
                 }
